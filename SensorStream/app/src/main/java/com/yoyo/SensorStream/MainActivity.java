@@ -85,19 +85,19 @@ public class MainActivity extends AppCompatActivity {
 
     void SetTextView() {
         if (l != null) {
-            tv.setText(String.format("Xaxis_speed %6f", X_axis_rotate) + "\n" +
-                    String.format("Yaxis_speed %6f", Y_axis_rotate) + "\n" +
-                    String.format("Zaxis_speed %6f", Z_axis_rotate) + "\n" +
-                    "速度" + l.getSpeed() + "   m/s\n" +
-                    "速度" + l.getSpeed() / 1000.0 * 3600.0 + " km/hr\n" +
-                    "經度" + l.getLongitude() + "\n" +
-                    "緯度" + l.getLatitude());
+            tv.setText( String.format("X-axis speed: %.6f\n", X_axis_rotate) +
+                String.format("Y-axis speed: %.6f\n", Y_axis_rotate) +
+                String.format("Z-axis speed: %.6f\n", Z_axis_rotate) +
+                String.format("速度: %.6f m/s\n", l.getSpeed()) +
+                String.format("速度: %.6f m/s\n", l.getSpeed() / 1000.0 * 3600) +
+                String.format("經度: %.6f\n", l.getLongitude()) +
+                String.format("緯度: %.6f", l.getLatitude()));
         }
         else {
-            tv.setText(String.format("Xaxis_speed %6f", X_axis_rotate) + "\n" +
-                    String.format("Yaxis_speed %6f", Y_axis_rotate) + "\n" +
-                    String.format("Zaxis_speed %6f", Z_axis_rotate) + "\n" +
-                    "GPS 訊號未取得");
+            tv.setText( String.format("X-axis speed: %.6f\n", X_axis_rotate) +
+                String.format("Y-axis speed: %.6f\n", Y_axis_rotate) +
+                String.format("Z-axis speed: %.6f\n", Z_axis_rotate) +
+                "GPS 訊號未取得");
         }
 
         WriteInfoToFile();
@@ -110,11 +110,11 @@ public class MainActivity extends AppCompatActivity {
             FileWriter fw = new FileWriter(f);
             if (l != null)
             {
-                fw.write(String.format("%6f %6f", l.getSpeed(), Z_axis_rotate));
+                fw.write(String.format("%.6f %.6f", l.getSpeed(), Z_axis_rotate));
             }
             else
             {
-                fw.write(String.format("%6f %6f", 0.0, Z_axis_rotate));
+                fw.write(String.format("%.6f %.6f", 0.0, Z_axis_rotate));
             }
             fw.close();
         }
