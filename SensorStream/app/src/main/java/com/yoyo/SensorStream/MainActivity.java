@@ -85,18 +85,18 @@ public class MainActivity extends AppCompatActivity {
 
     void SetTextView() {
         if (l != null) {
-            tv.setText( String.format("X-axis speed: %.6f\n", X_axis_rotate) +
-                String.format("Y-axis speed: %.6f\n", Y_axis_rotate) +
-                String.format("Z-axis speed: %.6f\n", Z_axis_rotate) +
+            tv.setText( String.format("X-axis speed: %.6f rad/s\n", X_axis_rotate) +
+                String.format("Y-axis speed: %.6f rad/s\n", Y_axis_rotate) +
+                String.format("Z-axis speed: %.6f rad/s\n", Z_axis_rotate) +
                 String.format("速度: %.6f m/s\n", l.getSpeed()) +
-                String.format("速度: %.6f m/s\n", l.getSpeed() / 1000.0 * 3600) +
+                String.format("速度: %.6f km/h\n", l.getSpeed() / 1000.0 * 3600) +
                 String.format("經度: %.6f\n", l.getLongitude()) +
                 String.format("緯度: %.6f", l.getLatitude()));
         }
         else {
-            tv.setText( String.format("X-axis speed: %.6f\n", X_axis_rotate) +
-                String.format("Y-axis speed: %.6f\n", Y_axis_rotate) +
-                String.format("Z-axis speed: %.6f\n", Z_axis_rotate) +
+            tv.setText( String.format("X-axis speed: %.6f rad/s\n", X_axis_rotate) +
+                String.format("Y-axis speed: %.6f rad/s\n", Y_axis_rotate) +
+                String.format("Z-axis speed: %.6f rad/s\n", Z_axis_rotate) +
                 "GPS 訊號未取得");
         }
 
